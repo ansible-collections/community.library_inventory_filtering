@@ -1,0 +1,27 @@
+---
+# Copyright (c) Ansible Project
+# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# See https://docs.ansible.com/ansible/latest/dev_guide/collections_galaxy_meta.html
+
+namespace: community
+name: library_inventory_filtering_v1
+version: 0.1.0
+readme: README.md
+authors:
+  - Felix Fontein (github.com/felixfontein)
+description: Library for inventory plugins in other collections that allows to filter hosts in a generic way.
+license:
+  - GPL-3.0-or-later
+#license_file: COPYING
+tags:
+  - inventory
+  - filtering
+repository: https://github.com/ansible-collections/community.library_inventory_filtering
+# documentation: https://docs.ansible.com/ansible/devel/collections/community/library_inventory_filtering/
+homepage: https://github.com/ansible-collections/community.library_inventory_filtering
+issues: https://github.com/ansible-collections/community.library_inventory_filtering/issues
+build_ignore:
+  - .gitignore
+  - changelogs/.plugin-cache.yaml
