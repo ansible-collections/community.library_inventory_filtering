@@ -31,7 +31,7 @@ You can find more information in the [developer guide for collections](https://d
 
 ## Release notes
 
-See the [changelog](https://github.com/ansible-collections/community.library_inventory_filtering/tree/stable-1/CHANGELOG.rst).
+See the [changelog](https://github.com/ansible-collections/community.library_inventory_filtering/tree/stable-1/CHANGELOG.md).
 
 ## Releasing, Versioning and Deprecation
 
