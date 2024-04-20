@@ -23,6 +23,16 @@ Usually this collection is installed as a dependency of another collection. You 
 
 See [Ansible Using collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) for general instructions on how to use collections.
 
+## Collection Documentation
+
+Browsing the [**latest** collection documentation](https://docs.ansible.com/ansible/latest/collections/community/library_inventory_filtering_v1) will show docs for the _latest version released in the Ansible package_, not the latest version of the collection released on Galaxy.
+
+Browsing the [**devel** collection documentation](https://docs.ansible.com/ansible/devel/collections/community/library_inventory_filtering_v1) shows docs for the _latest version released on Galaxy_.
+
+We also separately publish [**latest commit** collection documentation](https://ansible-collections.github.io/community.library_inventory_filtering/branch/stable-1/) which shows docs for the _latest commit in the `stable-1` branch_.
+
+If you use the Ansible package and do not update collections independently, use **latest**. If you install or update this collection directly from Galaxy, use **devel**. If you are looking to contribute, use **latest commit**.
+
 ## Contributing to this collection
 
 If you want to develop new content for this collection or improve what is already here, the easiest way to work on the collection is to clone it into one of the configured [`COLLECTIONS_PATH`](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#collections-paths), and work on it there.
