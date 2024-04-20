@@ -36,7 +36,10 @@ For the filtering, you need to import two functions from the plugin util, ``pars
 
 .. code-block:: python
 
-    from ansible_collections.community.library_inventory_filtering_v1.plugins.plugin_utils.inventory_filter import parse_filters, filter_host
+    from ansible_collections.community.library_inventory_filtering_v1.plugins.plugin_utils.inventory_filter import (
+        parse_filters,
+        filter_host,
+    )
 
 You can use ``parse_filters()`` to parse the ``filters`` option's value (``self.get_option('filters')``), and ``filter_host()`` to determine whether to include a host:
 
