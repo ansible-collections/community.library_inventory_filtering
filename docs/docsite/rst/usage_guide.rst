@@ -50,16 +50,21 @@ You can use ``parse_filters()`` to parse the ``filters`` option's value (``self.
 
             ...
 
+            # Parse the filters option
             filters = parse_filters(self.get_option('filters'))
 
             ...
 
             for host in hosts:
+                # Compile the host vars
                 host_vars = ...
 
+                # Now we can evaluate potential filter conditions
+                # based on the host name and host vars:
                 if not filter_host(self, host, host_vars, filters):
                     continue
 
+                # Add the host with its vars
                 self.inventory.add_host(name)
                 for key, value in host_vars.items():
                     self.inventory.set_variable(name, key, value)
