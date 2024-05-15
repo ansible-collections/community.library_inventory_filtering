@@ -5,7 +5,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 # Community Inventory Filtering Library Collection
-[![CI](https://github.com/ansible-collections/community.library_inventory_filtering/workflows/CI/badge.svg?event=push)](https://github.com/ansible-collections/community.library_inventory_filtering/actions) [![Codecov](https://img.shields.io/codecov/c/github/ansible-collections/community.library_inventory_filtering)](https://codecov.io/gh/ansible-collections/community.library_inventory_filtering)
+[![CI](https://github.com/ansible-collections/community.library_inventory_filtering/workflows/CI/badge.svg?event=push)](https://github.com/ansible-collections/community.library_inventory_filtering/actions)
+[![Codecov](https://img.shields.io/codecov/c/github/ansible-collections/community.library_inventory_filtering)](https://codecov.io/gh/ansible-collections/community.library_inventory_filtering)
+[![REUSE status](https://api.reuse.software/badge/github.com/ansible-collections/community.library_inventory_filtering)](https://api.reuse.software/info/github.com/ansible-collections/community.library_inventory_filtering)
 
 This repository contains the `community.library_inventory_filtering_v1` Ansible Collection. The collection includes helpers for use with other collections, that allow inventory plugins to offer common filtering functionality.
 
