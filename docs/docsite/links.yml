@@ -18,3 +18,7 @@ communication:
   matrix_rooms:
     - topic: General usage and support questions
       room: '#community:ansible.im'
+  forums:
+    - topic: Ansible Forum
+      # The following URL directly points to the "Collection Development" section
+      url: https://forum.ansible.com/c/project/collection-development/27
