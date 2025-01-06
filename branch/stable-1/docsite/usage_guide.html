@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Usage Guide &mdash; Community.Library_Inventory_Filtering Collection  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5707b69d" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=41de9001" />
       <link rel="stylesheet" type="text/css" href="../_static/css/ansible.css?v=c5b67dd2" />
       <link rel="stylesheet" type="text/css" href="../_static/antsibull-minimal.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/rtd-ethical-ads.css?v=289b023e" />
@@ -130,16 +130,16 @@
 </pre></div>
 </div>
 <p>For the filtering, you need to import two functions from the plugin util, <code class="docutils literal notranslate"><span class="pre">parse_filters()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter_host()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansible_collections.community.library_inventory_filtering_v1.plugins.plugin_utils.inventory_filter</span> <span class="kn">import</span> <span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansible_collections.community.library_inventory_filtering_v1.plugins.plugin_utils.inventory_filter</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">parse_filters</span><span class="p">,</span>
     <span class="n">filter_host</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">parse_filters()</span></code> to parse the <code class="docutils literal notranslate"><span class="pre">filters</span></code> option’s value (<code class="docutils literal notranslate"><span class="pre">self.get_option('filters')</span></code>), and <code class="docutils literal notranslate"><span class="pre">filter_host()</span></code> to determine whether to include a host:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InventoryModule</span><span class="p">(</span><span class="n">BaseInventoryPlugin</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">InventoryModule</span><span class="p">(</span><span class="n">BaseInventoryPlugin</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">InventoryModule</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_read_config_data</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
