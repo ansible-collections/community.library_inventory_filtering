@@ -16,6 +16,9 @@ from ansible.template import Templar
 from ansible_collections.community.internal_test_tools.tests.unit.mock.loader import (
     DictDataLoader,
 )
+from ansible_collections.community.internal_test_tools.tests.unit.utils.trust import (
+    make_trusted,
+)
 
 from .....plugins.plugin_utils.inventory_filter import filter_host, parse_filters
 
@@ -137,15 +140,18 @@ DATA_TEST_FILTER_SUCCESS = [
     (
         "example.com",
         {"foo": "bar"},
-        [{"include": 'inventory_hostname == "example.com"'}, {"exclude": "true"}],
+        [
+            {"include": make_trusted('inventory_hostname == "example.com"')},
+            {"exclude": make_trusted("true")},
+        ],
         True,
     ),
     (
         "example.com",
         {},
         [
-            {"include": 'inventory_hostname == "foo.com"'},
-            {"exclude": "false"},
+            {"include": make_trusted('inventory_hostname == "foo.com"')},
+            {"exclude": make_trusted("false")},
             {"exclude": True},
         ],
         False,
@@ -168,8 +174,9 @@ DATA_TEST_FILTER_ERRORS = [
     (
         "example.com",
         {},
-        [{"include": "foobar"}],
+        [{"include": make_trusted("foobar")}],
         (
+            "Could not evaluate filter condition 'foobar' for host example.com: Error while evaluating conditional: 'foobar' is undefined",
             "Could not evaluate filter condition 'foobar' for host example.com: 'foobar' is undefined",
             "Could not evaluate filter condition 'foobar' for host example.com: 'foobar' is undefined. 'foobar' is undefined",
         ),

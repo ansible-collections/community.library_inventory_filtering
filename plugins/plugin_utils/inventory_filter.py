@@ -82,11 +82,16 @@ def filter_host(inventory_plugin, host, host_vars, filters):
     def evaluate(condition):
         if isinstance(condition, bool):
             return condition
-        conditional = "{%% if %s %%} True {%% else %%} False {%% endif %%}" % condition
         templar = inventory_plugin.templar
         old_vars = templar.available_variables
         try:
             templar.available_variables = template_vars
+            if hasattr(templar, "evaluate_expression"):
+                # This is available since the Data Tagging PR has been merged
+                return templar.evaluate_conditional(condition)
+            conditional = (
+                "{%% if %s %%} True {%% else %%} False {%% endif %%}" % condition
+            )
             return boolean(templar.template(conditional))
         except Exception as e:
             raise AnsibleParserError(

@@ -1,0 +1,2 @@
+bugfixes:
+  - "inventory_filter plugin utils - make compatible with ansible-core's Data Tagging feature (https://github.com/ansible-collections/community.library_inventory_filtering/pull/24)."
