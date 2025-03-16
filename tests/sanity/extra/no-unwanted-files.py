@@ -19,6 +19,7 @@ def main():
         '.ps1',
         '.psm1',
         '.py',
+        '.pyi',
     )
 
     skip_paths = set([
@@ -32,6 +33,9 @@ def main():
             continue
 
         if any(path.startswith(skip_directory) for skip_directory in skip_directories):
+            continue
+
+        if os.path.split(path)[1] in {'py.typed'}:
             continue
 
         ext = os.path.splitext(path)[1]
