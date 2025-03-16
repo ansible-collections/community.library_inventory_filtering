@@ -1,0 +1,2 @@
+minor_changes:
+  - "Add typing information for the ``inventory_filter`` plugin utils (https://github.com/ansible-collections/community.library_inventory_filtering/pull/22)."
