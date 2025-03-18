@@ -43,22 +43,41 @@ def fixture_inventory():  # (...) -> typing.Any
 
 
 DATA_TEST_PARSE_SUCCESS = [
-    None,
-    [],
-    [{"include": "foo"}],
-    [{"include": True}],
-    [{"exclude": "foo"}],
-    [{"exclude": False}],
-]  # type: list[None | list[dict[str, typing.Any]]]
+    (
+        None,
+        [],
+    ),
+    (
+        [],
+        [],
+    ),
+    (
+        [{"include": "foo"}],
+        [{"include": "foo"}],
+    ),
+    (
+        [{"include": True}],
+        [{"include": True}],
+    ),
+    (
+        [{"exclude": "foo"}],
+        [{"exclude": "foo"}],
+    ),
+    (
+        [{"exclude": False}],
+        [{"exclude": False}],
+    ),
+]  # type: list[tuple[None | list[dict[str, typing.Any]], list[_IncludeFilter | _ExcludeFilter]]]
 
 
-@pytest.mark.parametrize("input", DATA_TEST_PARSE_SUCCESS)
+@pytest.mark.parametrize("filters, output", DATA_TEST_PARSE_SUCCESS)
 def test_parse_success(
-    input,  # type: None | list[dict[str, typing.Any]]
+    filters,  # type: None | list[dict[str, typing.Any]]
+    output,  # type: list[_IncludeFilter | _ExcludeFilter]
 ):  # type: (...) -> None
-    result = parse_filters(input)
+    result = parse_filters(filters)
     print(result)
-    assert result == (input or [])
+    assert result == output
 
 
 DATA_TEST_PARSE_ERRORS = [
@@ -88,13 +107,13 @@ DATA_TEST_PARSE_ERRORS = [
 ]  # type: list[tuple[list[typing.Any], tuple[str, ...]]]
 
 
-@pytest.mark.parametrize("input, output", DATA_TEST_PARSE_ERRORS)
+@pytest.mark.parametrize("filters, output", DATA_TEST_PARSE_ERRORS)
 def test_parse_errors(
-    input,  # type: list[typing.Any]
+    filters,  # type: list[typing.Any]
     output,  # tuple[str, ...]
 ):  # type: (...) -> None
     with pytest.raises(AnsibleError) as exc:
-        parse_filters(input)
+        parse_filters(filters)
 
     print(exc.value.args[0])
     assert exc.value.args[0] in output

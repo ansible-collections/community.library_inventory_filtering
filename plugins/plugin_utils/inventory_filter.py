@@ -26,20 +26,20 @@ def parse_filters(filters):
     result = []
     if filters is None:
         return result
-    for index, filter in enumerate(filters):
-        if not isinstance(filter, Mapping):
+    for index, a_filter in enumerate(filters):
+        if not isinstance(a_filter, Mapping):
             raise AnsibleError(
                 "filter[{index}] must be a dictionary".format(
                     index=index + 1,
                 )
             )
-        if len(filter) != 1:
+        if len(a_filter) != 1:
             raise AnsibleError(
                 "filter[{index}] must have exactly one key-value pair".format(
                     index=index + 1,
                 )
             )
-        key, value = list(filter.items())[0]
+        key, value = list(a_filter.items())[0]
         if key not in _ALLOWED_KEYS:
             raise AnsibleError(
                 'filter[{index}] must have a {allowed_keys} key, not "{key}"'.format(
@@ -58,7 +58,7 @@ def parse_filters(filters):
                     value_type=type(value),
                 )
             )
-        result.append(filter)
+        result.append(a_filter)
     return result
 
 
@@ -66,11 +66,11 @@ def filter_host(inventory_plugin, host, host_vars, filters):
     """
     Determine whether a host should be accepted (``True``) or not (``False``).
     """
-    vars = {
+    template_vars = {
         "inventory_hostname": host,
     }
     if host_vars:
-        vars.update(host_vars)
+        template_vars.update(host_vars)
 
     def evaluate(condition):
         if isinstance(condition, bool):
@@ -79,7 +79,7 @@ def filter_host(inventory_plugin, host, host_vars, filters):
         templar = inventory_plugin.templar
         old_vars = templar.available_variables
         try:
-            templar.available_variables = vars
+            templar.available_variables = template_vars
             return boolean(templar.template(conditional))
         except Exception as e:
             raise AnsibleParserError(
@@ -92,13 +92,13 @@ def filter_host(inventory_plugin, host, host_vars, filters):
         finally:
             templar.available_variables = old_vars
 
-    for filter in filters:
-        if "include" in filter:
-            expr = filter["include"]
+    for a_filter in filters:
+        if "include" in a_filter:
+            expr = a_filter["include"]
             if evaluate(expr):
                 return True
-        if "exclude" in filter:
-            expr = filter["exclude"]
+        if "exclude" in a_filter:
+            expr = a_filter["exclude"]
             if evaluate(expr):
                 return False
 
