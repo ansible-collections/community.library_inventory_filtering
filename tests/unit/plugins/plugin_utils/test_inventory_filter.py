@@ -24,7 +24,7 @@ if sys.version_info >= (3, 6):
     import typing
 
     if typing.TYPE_CHECKING:
-        from .....plugins.plugin_utils.inventory_filter import (
+        from .....plugins.plugin_utils.inventory_filter import (  # pragma: no cover
             _ExcludeFilter,
             _IncludeFilter,
         )
