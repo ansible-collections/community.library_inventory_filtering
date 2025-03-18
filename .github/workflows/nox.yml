@@ -1,0 +1,45 @@
+---
+# Copyright (c) Ansible Project
+# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+name: nox
+'on':
+  push:
+    branches:
+      - main
+      - stable-*
+  pull_request:
+  # Run CI once per day (at 04:30 UTC)
+  schedule:
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  nox:
+    runs-on: ubuntu-latest
+    name: "Run nox"
+    steps:
+      - name: Check out collection
+        uses: actions/checkout@v4
+        with:
+          path: ansible_collections/community/dns
+          persist-credentials: false
+      - name: Check out community.internal_test_tools
+        uses: actions/checkout@v4
+        with:
+          repository: ansible-collections/community.internal_test_tools
+          ref: main
+          path: ansible_collections/community/internal_test_tools
+          persist-credentials: false
+      - name: Check out community.library_inventory_filtering
+        uses: actions/checkout@v4
+        with:
+          repository: ansible-collections/community.library_inventory_filtering
+          ref: stable-1
+          path: ansible_collections/community/library_inventory_filtering_v1
+          persist-credentials: false
+      - name: Run nox
+        uses: ansible-community/antsibull-nox@main
+        with:
+          working-directory: ansible_collections/community/dns
