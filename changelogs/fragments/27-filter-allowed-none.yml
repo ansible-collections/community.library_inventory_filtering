@@ -1,0 +1,2 @@
+bugfixes:
+  - "inventory_plugin plugin util - ``parse_filters`` now filters ``None`` values with allowed keys (https://github.com/ansible-collections/community.library_inventory_filtering/pull/27)."

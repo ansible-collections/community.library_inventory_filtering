@@ -67,6 +67,10 @@ DATA_TEST_PARSE_SUCCESS = [
         [{"exclude": False}],
         [{"exclude": False}],
     ),
+    (
+        [{"include": None, "exclude": False}],
+        [{"exclude": False}],
+    ),
 ]  # type: list[tuple[None | list[dict[str, typing.Any]], list[_IncludeFilter | _ExcludeFilter]]]
 
 
@@ -91,6 +95,10 @@ DATA_TEST_PARSE_ERRORS = [
     ),
     (
         [{"a": "b", "c": "d"}],
+        ("filter[1] must have exactly one key-value pair",),
+    ),
+    (
+        [{"include": True, "foo": None}],
         ("filter[1] must have exactly one key-value pair",),
     ),
     (

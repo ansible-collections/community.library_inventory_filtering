@@ -33,6 +33,13 @@ def parse_filters(filters):
                     index=index + 1,
                 )
             )
+        a_filter = dict(  # pylint: disable=consider-using-dict-comprehension
+            [
+                (k, v)
+                for k, v in a_filter.items()
+                if k not in _ALLOWED_KEYS or v is not None
+            ]
+        )
         if len(a_filter) != 1:
             raise AnsibleError(
                 "filter[{index}] must have exactly one key-value pair".format(
