@@ -81,6 +81,7 @@ Since multiple versions are maintained in parallel, there is no need to wait bet
 - [Ansible Collection overview](https://github.com/ansible-collections/overview)
 - [Ansible User guide](https://docs.ansible.com/ansible/latest/user_guide/index.html)
 - [Ansible Developer guide](https://docs.ansible.com/ansible/latest/dev_guide/index.html)
+- [Antsibull-nox documentation](https://ansible.readthedocs.io/projects/antsibull-nox/)
 - [Ansible Collections Checklist](https://github.com/ansible-collections/overview/blob/master/collection_requirements.rst)
 - [Ansible Community code of conduct](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
 - [The Bullhorn (the Ansible Contributor newsletter)](https://us19.campaign-archive.com/home/?u=56d874e027110e35dea0e03c1&id=d6635f5420)

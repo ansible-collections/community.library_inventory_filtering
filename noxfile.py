@@ -29,6 +29,25 @@ antsibull_nox.add_lint_sessions(
     ],
 )
 
+antsibull_nox.add_docs_check(
+    validate_collection_refs="all",
+)
+
+antsibull_nox.add_license_check()
+
+antsibull_nox.add_extra_checks(
+    run_no_unwanted_files=True,
+    no_unwanted_files_module_extensions=[".py"],
+    no_unwanted_files_yaml_extensions=[".yml"],
+    no_unwanted_files_skip_paths=[
+        "plugins/plugin_utils/py.typed",
+    ],
+)
+
+antsibull_nox.add_build_import_check(
+    run_galaxy_importer=True,
+)
+
 
 # Allow to run the noxfile with `python noxfile.py`, `pipx run noxfile.py`, or similar.
 # Requires nox >= 2025.02.09
