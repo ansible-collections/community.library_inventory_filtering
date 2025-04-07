@@ -14,7 +14,7 @@ authors:
 description: Library for inventory plugins in other collections that allows to filter hosts in a generic way.
 license:
   - GPL-3.0-or-later
-#license_file: COPYING
+# license_file: COPYING
 tags:
   - inventory
   - filtering

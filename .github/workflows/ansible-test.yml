@@ -7,7 +7,7 @@
 # https://github.com/marketplace/actions/ansible-test
 
 name: CI
-on:
+"on":
   # Run CI against all pushes (direct commits, also merged PRs), Pull Requests
   push:
     branches:
@@ -41,7 +41,8 @@ jobs:
       - name: Perform sanity testing
         uses: felixfontein/ansible-test-gh-action@main
         with:
-          ansible-core-github-repository-slug: ${{ contains(fromJson('["stable-2.9", "stable-2.10", "stable-2.11"]'), matrix.ansible) && 'ansible-community/eol-ansible' || 'ansible/ansible' }}
+          ansible-core-github-repository-slug: >-
+            ${{ contains(fromJson('["stable-2.9", "stable-2.10", "stable-2.11"]'), matrix.ansible) && 'ansible-community/eol-ansible' || 'ansible/ansible' }}
           ansible-core-version: ${{ matrix.ansible }}
           codecov-token: ${{ secrets.CODECOV_TOKEN }}
           testing-type: sanity
@@ -70,7 +71,8 @@ jobs:
       - name: Perform unit testing against Ansible version ${{ matrix.ansible }}
         uses: felixfontein/ansible-test-gh-action@main
         with:
-          ansible-core-github-repository-slug: ${{ contains(fromJson('["stable-2.9", "stable-2.10", "stable-2.11"]'), matrix.ansible) && 'ansible-community/eol-ansible' || 'ansible/ansible' }}
+          ansible-core-github-repository-slug: >-
+            ${{ contains(fromJson('["stable-2.9", "stable-2.10", "stable-2.11"]'), matrix.ansible) && 'ansible-community/eol-ansible' || 'ansible/ansible' }}
           ansible-core-version: ${{ matrix.ansible }}
           codecov-token: ${{ secrets.CODECOV_TOKEN }}
           testing-type: units
