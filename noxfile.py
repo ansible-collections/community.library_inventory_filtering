@@ -23,6 +23,8 @@ antsibull_nox.add_lint_sessions(
     black_config="tests/nox-config-black.toml",
     flake8_config="tests/nox-config-flake8.ini",
     pylint_rcfile="tests/nox-config-pylint.rc",
+    run_yamllint=True,
+    yamllint_config="tests/nox-config-yamllint.yml",
     mypy_config="tests/nox-config-mypy.ini",
     mypy_extra_deps=[
         "types-mock",
