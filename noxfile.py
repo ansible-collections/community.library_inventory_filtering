@@ -18,6 +18,13 @@ except ImportError:
     sys.exit(1)
 
 
+antsibull_nox.setup(
+    collection_sources={
+        "community.internal_test_tools": "git+https://github.com/ansible-collections/community.internal_test_tools.git,main",
+    },
+)
+
+
 antsibull_nox.add_lint_sessions(
     isort_config="tests/nox-config-isort.cfg",
     black_config="tests/nox-config-black.toml",
