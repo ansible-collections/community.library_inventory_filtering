@@ -33,8 +33,6 @@ jobs:
   ansible-test:
     uses: ansible-community/antsibull-nox/.github/workflows/reusable-nox-matrix.yml@main
     with:
-      collection-namespace: community
-      collection-name: library_inventory_filtering_v1
       upload-codecov: true
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
