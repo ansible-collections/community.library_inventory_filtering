@@ -18,17 +18,14 @@ name: nox
 jobs:
   nox:
     runs-on: ubuntu-latest
-    name: "Run nox"
+    name: "Run extra sanity tests"
     steps:
       - name: Check out collection
         uses: actions/checkout@v4
         with:
-          path: ansible_collections/community/library_inventory_filtering_v1
           persist-credentials: false
       - name: Run nox
         uses: ansible-community/antsibull-nox@main
-        with:
-          working-directory: ansible_collections/community/library_inventory_filtering_v1
 
   ansible-test:
     uses: ansible-community/antsibull-nox/.github/workflows/reusable-nox-matrix.yml@main
