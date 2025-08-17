@@ -10,10 +10,16 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 from ansible.errors import AnsibleError, AnsibleParserError
-from ansible.module_utils.six.moves.collections_abc import Mapping
 from ansible.module_utils.common.text.converters import to_native
 from ansible.module_utils.parsing.convert_bool import boolean
 from ansible.module_utils.six import string_types
+
+
+try:
+    from collections.abc import Mapping
+except ImportError:
+    # Python 2.x
+    from collections import Mapping  # pylint: disable=deprecated-class
 
 
 _ALLOWED_KEYS = ("include", "exclude")
