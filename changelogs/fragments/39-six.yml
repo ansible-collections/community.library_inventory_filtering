@@ -1,0 +1,3 @@
+bugfixes:
+  - "Stop using ``ansible.module_utils.six`` to avoid user-facing deprecation messages with ansible-core 2.20, while still supporting older ansible-core versions
+     (https://github.com/ansible-collections/community.library_inventory_filtering/pull/39)."
