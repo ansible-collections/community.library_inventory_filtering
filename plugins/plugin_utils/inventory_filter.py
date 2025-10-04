@@ -17,9 +17,9 @@ from ansible.module_utils.parsing.convert_bool import boolean
 
 
 if sys.version_info[0] == 2:
-    string_types = (str, unicode)  # noqa: F821, pylint: disable=undefined-variable
+    string_types = (basestring,)  # noqa: F821, pylint: disable=undefined-variable
 else:
-    string_types = (bytes, str)
+    string_types = (str,)
 
 try:
     from collections.abc import Mapping
