@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community.Library_Inventory_Filtering_V1 Release Notes &mdash; Community.Library_Inventory_Filtering Collection  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=41de9001" />
+      <link rel="stylesheet" type="text/css" href="_static/css/ansible.css?v=c5b67dd2" />
+      <link rel="stylesheet" type="text/css" href="_static/antsibull-minimal.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/rtd-ethical-ads.css?v=289b023e" />
+
+  
+    <link rel="shortcut icon" href="_static/images/Ansible-Mark-RGB_Black.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7f41d439"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage Guide" href="docsite/usage_guide.html" />
+    <link rel="prev" title="Community.Library_Inventory_Filtering_V1" href="index.html" /><!-- extra head elements for Ansible beyond RTD Sphinx Theme -->
+
+
+
+
+</head>
+
+<body class="wy-body-for-nav"><!-- extra body elements for Ansible beyond RTD Sphinx Theme -->
+
+<div class="DocSite-globalNav ansibleNav">
+  <ul>
+    <li><a href="https://www.ansible.com/blog" target="_blank">Blog</a></li>
+    <li><a href="https://forum.ansible.com/" target="_blank">Ansible community forum</a></li>
+    <li><a href="https://docs.ansible.com/" target="_blank">Documentation</a></li>
+  </ul>
+</div>
+
+<a class="DocSite-nav" href="https://ansible-collections.github.io/community.library_inventory_filtering/branch/stable-1/" style="padding-bottom: 30px;">
+
+  <img class="DocSiteNav-logo"
+    src="_static/images/Ansible-Mark-RGB_White.png"
+    alt="Ansible Logo">
+  <div class="DocSiteNav-title">Community.Library_Inventory_Filtering Collection Docs</div>
+</a>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Community.Library_Inventory_Filtering Collection
+          </a><!--- Based on https://github.com/rtfd/sphinx_rtd_theme/pull/438/files -->
+
+<div class="version">
+  
+    
+  
+</div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <label class="sr-only" for="q">Search docs:</label>
+    <input type="text" class="st-default-search-input" id="q" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Community.Library_Inventory_Filtering_V1 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-5">v1.1.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#release-summary">Release Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bugfixes">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-4">v1.1.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Release Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-3">v1.1.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Release Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-2">v1.1.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Release Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-1">v1.1.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Release Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-0">v1.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Release Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minor-changes">Minor Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-0-2">v1.0.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Release Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-0-1">v1.0.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Release Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-0-0">v1.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Release Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-1-0">v0.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Release Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docsite/usage_guide.html">Usage Guide</a></li>
+</ul>
+<!-- extra nav elements for Ansible beyond RTD Sphinx Theme -->
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Community.Library_Inventory_Filtering Collection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Community.Library_Inventory_Filtering_V1 Release Notes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+  
+           <div itemprop="articleBody">
+             
+  <section id="community-library-inventory-filtering-v1-release-notes">
+<span id="changelog-for-community-library-inventory-filtering-v1"></span><h1><a class="toc-backref" href="#id14" role="doc-backlink">Community.Library_Inventory_Filtering_V1 Release Notes</a><a class="headerlink" href="#community-library-inventory-filtering-v1-release-notes" title="Link to this heading"></a></h1>
+<nav class="contents" id="topics">
+<p class="topic-title">Topics</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#community-library-inventory-filtering-v1-release-notes" id="id14">Community.Library_Inventory_Filtering_V1 Release Notes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#v1-1-5" id="id15">v1.1.5</a></p>
+<ul>
+<li><p><a class="reference internal" href="#release-summary" id="id16">Release Summary</a></p></li>
+<li><p><a class="reference internal" href="#bugfixes" id="id17">Bugfixes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-1-4" id="id18">v1.1.4</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id19">Release Summary</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id20">Bugfixes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-1-3" id="id21">v1.1.3</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id22">Release Summary</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id23">Bugfixes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-1-2" id="id24">v1.1.2</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id25">Release Summary</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id26">Bugfixes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-1-1" id="id27">v1.1.1</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id28">Release Summary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-1-0" id="id29">v1.1.0</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id8" id="id30">Release Summary</a></p></li>
+<li><p><a class="reference internal" href="#minor-changes" id="id31">Minor Changes</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id32">Bugfixes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-0-2" id="id33">v1.0.2</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id10" id="id34">Release Summary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-0-1" id="id35">v1.0.1</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id11" id="id36">Release Summary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v1-0-0" id="id37">v1.0.0</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id12" id="id38">Release Summary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#v0-1-0" id="id39">v0.1.0</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id13" id="id40">Release Summary</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="v1-1-5">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">v1.1.5</a><a class="headerlink" href="#v1-1-5" title="Link to this heading"></a></h2>
+<section id="release-summary">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Release Summary</a><a class="headerlink" href="#release-summary" title="Link to this heading"></a></h3>
+<p>Maintenance release.</p>
+</section>
+<section id="bugfixes">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">Bugfixes</a><a class="headerlink" href="#bugfixes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Improve and stricten typing information (<a class="reference external" href="https://github.com/ansible-collections/community.library_inventory_filtering/pull/42">https://github.com/ansible-collections/community.library_inventory_filtering/pull/42</a>).</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-1-4">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">v1.1.4</a><a class="headerlink" href="#v1-1-4" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Maintenance release.</p>
+</section>
+<section id="id2">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Bugfixes</a><a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Fix accidental type extensions (<a class="reference external" href="https://github.com/ansible-collections/community.library_inventory_filtering/pull/40">https://github.com/ansible-collections/community.library_inventory_filtering/pull/40</a>).</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-1-3">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">v1.1.3</a><a class="headerlink" href="#v1-1-3" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>Maintenance release.</p>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Bugfixes</a><a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Stop using <code class="docutils literal notranslate"><span class="pre">ansible.module_utils.six</span></code> to avoid user-facing deprecation messages with ansible-core 2.20, while still supporting older ansible-core versions (<a class="reference external" href="https://github.com/ansible-collections/community.library_inventory_filtering/pull/39">https://github.com/ansible-collections/community.library_inventory_filtering/pull/39</a>).</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-1-2">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">v1.1.2</a><a class="headerlink" href="#v1-1-2" title="Link to this heading"></a></h2>
+<section id="id5">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>Maintenance release.</p>
+</section>
+<section id="id6">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Bugfixes</a><a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Avoid deprecated functionality in ansible-core 2.20 (<a class="reference external" href="https://github.com/ansible-collections/community.library_inventory_filtering/pull/38">https://github.com/ansible-collections/community.library_inventory_filtering/pull/38</a>).</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-1-1">
+<h2><a class="toc-backref" href="#id27" role="doc-backlink">v1.1.1</a><a class="headerlink" href="#v1-1-1" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>Maintenance release.</p>
+</section>
+</section>
+<section id="v1-1-0">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink">v1.1.0</a><a class="headerlink" href="#v1-1-0" title="Link to this heading"></a></h2>
+<section id="id8">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>Feature, bugfix, and maintenance release with support for Data Tagging.</p>
+</section>
+<section id="minor-changes">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">Minor Changes</a><a class="headerlink" href="#minor-changes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Add typing information for the <code class="docutils literal notranslate"><span class="pre">inventory_filter</span></code> plugin utils (<a class="reference external" href="https://github.com/ansible-collections/community.library_inventory_filtering/pull/22">https://github.com/ansible-collections/community.library_inventory_filtering/pull/22</a>).</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">Bugfixes</a><a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>inventory_filter plugin utils - make compatible with ansible-core’s Data Tagging feature (<a class="reference external" href="https://github.com/ansible-collections/community.library_inventory_filtering/pull/24">https://github.com/ansible-collections/community.library_inventory_filtering/pull/24</a>).</p></li>
+<li><p>inventory_plugin plugin util - <code class="docutils literal notranslate"><span class="pre">parse_filters</span></code> now filters <code class="docutils literal notranslate"><span class="pre">None</span></code> values with allowed keys (<a class="reference external" href="https://github.com/ansible-collections/community.library_inventory_filtering/pull/27">https://github.com/ansible-collections/community.library_inventory_filtering/pull/27</a>).</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-0-2">
+<h2><a class="toc-backref" href="#id33" role="doc-backlink">v1.0.2</a><a class="headerlink" href="#v1-0-2" title="Link to this heading"></a></h2>
+<section id="id10">
+<h3><a class="toc-backref" href="#id34" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<p>Maintenance release with updated links.</p>
+</section>
+</section>
+<section id="v1-0-1">
+<h2><a class="toc-backref" href="#id35" role="doc-backlink">v1.0.1</a><a class="headerlink" href="#v1-0-1" title="Link to this heading"></a></h2>
+<section id="id11">
+<h3><a class="toc-backref" href="#id36" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p>Maintenance release with documentation.</p>
+</section>
+</section>
+<section id="v1-0-0">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink">v1.0.0</a><a class="headerlink" href="#v1-0-0" title="Link to this heading"></a></h2>
+<section id="id12">
+<h3><a class="toc-backref" href="#id38" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<p>First production ready release.</p>
+</section>
+</section>
+<section id="v0-1-0">
+<h2><a class="toc-backref" href="#id39" role="doc-backlink">v0.1.0</a><a class="headerlink" href="#v0-1-0" title="Link to this heading"></a></h2>
+<section id="id13">
+<h3><a class="toc-backref" href="#id40" role="doc-backlink">Release Summary</a><a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<p>Initial test release.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          
+
+<footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Community.Library_Inventory_Filtering_V1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="docsite/usage_guide.html" class="btn btn-neutral float-right" title="Usage Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Community.Library_Inventory_Filtering Contributors.</p>
+  </div>
+
+  
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script><!-- extra footer elements for Ansible beyond RTD Sphinx Theme -->
+
+</body>
+</html>
